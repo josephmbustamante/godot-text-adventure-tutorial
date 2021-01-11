@@ -54,12 +54,12 @@ margin_bottom = 480.0
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 2 )
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Background/MarginContainer/Rows/GameInfo"]
+[node name="Scroll" type="ScrollContainer" parent="Background/MarginContainer/Rows/GameInfo"]
 margin_right = 984.0
 margin_bottom = 480.0
 scroll_horizontal_enabled = false
 
-[node name="HistoryRows" type="VBoxContainer" parent="Background/MarginContainer/Rows/GameInfo/ScrollContainer"]
+[node name="HistoryRows" type="VBoxContainer" parent="Background/MarginContainer/Rows/GameInfo/Scroll"]
 custom_constants/separation = 20
 
 [node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Rows"]
