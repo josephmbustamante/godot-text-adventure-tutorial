@@ -1,4 +1,20 @@
-[gd_scene format=2]
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Input.gd" type="Script" id=1]
+[ext_resource path="res://fonts/plex_mono_28.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.215686, 0.215686, 0.215686, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.286275, 0.286275, 0.286275, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [node name="Game" type="Control"]
 anchor_right = 1.0
@@ -7,6 +23,60 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Background" type="PanelContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Rows" type="VBoxContainer" parent="Background/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 580.0
+custom_constants/separation = 20
+
+[node name="GameInfo" type="PanelContainer" parent="Background/MarginContainer/Rows"]
+margin_right = 984.0
+margin_bottom = 480.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Rows"]
+margin_top = 500.0
+margin_right = 984.0
+margin_bottom = 560.0
+rect_min_size = Vector2( 0, 60 )
+custom_styles/panel = SubResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/Rows/InputArea"]
+margin_right = 984.0
+margin_bottom = 60.0
+
+[node name="Caret" type="Label" parent="Background/MarginContainer/Rows/InputArea/HBoxContainer"]
+margin_top = 11.0
+margin_right = 51.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 2 )
+text = " > "
+
+[node name="Input" type="LineEdit" parent="Background/MarginContainer/Rows/InputArea/HBoxContainer"]
+margin_left = 55.0
+margin_right = 984.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = ExtResource( 2 )
+max_length = 48
+script = ExtResource( 1 )
