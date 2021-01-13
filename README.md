@@ -3,7 +3,7 @@ This repository contains the source code for the Godot Text Adventure Tutorial s
 
 In this series, you'll create a text adventure game in the same style as Zork and other old-school text-based games.
 
-[You can follow along with the series on YouTube.](https://www.youtube.com/watch?v=gXkkNSfxLRI&list=PLpwc3ughKbZexDyPexHN2MXLliKAovkpl&index=2&t=2s)
+[You can follow along with the series on YouTube.](https://www.youtube.com/watch?v=wCI650TDhHA&list=PLpwc3ughKbZfkSPko3azFD4dd4IHSiQeE)
 
 ## How to Use This Repository
 
