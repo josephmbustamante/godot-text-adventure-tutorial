@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Input.gd" type="Script" id=1]
 [ext_resource path="res://fonts/plex_mono_28.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Game.gd" type="Script" id=3]
+[ext_resource path="res://CommandProcessor.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
@@ -13,9 +14,9 @@ bg_color = Color( 0.215686, 0.215686, 0.215686, 1 )
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.286275, 0.286275, 0.286275, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=5]
-
 [sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
 
 [node name="Game" type="Control"]
 anchor_right = 1.0
@@ -24,6 +25,9 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CommandProcessor" type="Node" parent="."]
+script = ExtResource( 4 )
 
 [node name="Background" type="PanelContainer" parent="."]
 anchor_right = 1.0
@@ -60,6 +64,10 @@ margin_bottom = 480.0
 scroll_horizontal_enabled = false
 
 [node name="HistoryRows" type="VBoxContainer" parent="Background/MarginContainer/Rows/GameInfo/Scroll"]
+margin_right = 984.0
+margin_bottom = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_constants/separation = 20
 
 [node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Rows"]
@@ -85,8 +93,8 @@ margin_left = 55.0
 margin_right = 984.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
-custom_styles/focus = SubResource( 5 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
 custom_fonts/font = ExtResource( 2 )
 max_length = 48
 script = ExtResource( 1 )

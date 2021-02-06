@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://fonts/plex_mono_24.tres" type="DynamicFont" id=1]
+
+[node name="InputHistory" type="Label"]
+margin_right = 984.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.631373, 0.631373, 0.631373, 1 )
+text = " > This is what the user typed"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
