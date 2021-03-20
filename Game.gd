@@ -12,14 +12,17 @@ onready var command_processor = $CommandProcessor
 onready var history_rows = $Background/MarginContainer/Rows/GameInfo/Scroll/HistoryRows
 onready var scroll = $Background/MarginContainer/Rows/GameInfo/Scroll
 onready var scrollbar = scroll.get_v_scrollbar()
+onready var room_manager = $RoomManager
 
 
 func _ready() -> void:
 	scrollbar.connect("changed", self, "handle_scrollbar_changed")
 	max_scroll_length = scrollbar.max_value
-	var starting_message = Response.instance()
-	starting_message.text = "You find yourself in a house, with no memory of how you got there. You need to find your way out. You can type 'help' to see your available commands."
-	add_response_to_game(starting_message)
+
+	create_response("Welcome to the retro text adventure! You can type 'help' to see available commands.")
+
+	var starting_room_response = command_processor.initialize(room_manager.get_child(0))
+	create_response(starting_room_response)
 
 
 func handle_scrollbar_changed():
@@ -36,6 +39,12 @@ func _on_Input_text_entered(new_text: String) -> void:
 	var response = command_processor.process_command(new_text)
 	input_response.set_text(new_text, response)
 	add_response_to_game(input_response)
+
+
+func create_response(response_text: String):
+	var response = Response.instance()
+	response.text = response_text
+	add_response_to_game(response)
 
 
 func add_response_to_game(response: Control):

@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "PanelContainer",
+"class": "Room",
+"language": "GDScript",
+"path": "res://Room.gd"
+} ]
 _global_script_class_icons={
-
+"Room": ""
 }
 
 [application]

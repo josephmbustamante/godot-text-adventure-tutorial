@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Input.gd" type="Script" id=1]
 [ext_resource path="res://fonts/plex_mono_28.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Game.gd" type="Script" id=3]
 [ext_resource path="res://CommandProcessor.gd" type="Script" id=4]
+[ext_resource path="res://Room.tscn" type="PackedScene" id=5]
+[ext_resource path="res://RoomManager.gd" type="Script" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
@@ -28,6 +30,25 @@ __meta__ = {
 
 [node name="CommandProcessor" type="Node" parent="."]
 script = ExtResource( 4 )
+
+[node name="RoomManager" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="HouseRoom" parent="RoomManager" instance=ExtResource( 5 )]
+margin_left = 90.9979
+margin_top = -377.506
+margin_right = 340.998
+margin_bottom = -177.506
+room_name = "a house"
+room_description = "a random house that you do not recognize."
+
+[node name="OutsideRoom" parent="RoomManager" instance=ExtResource( 5 )]
+margin_left = 423.456
+margin_top = -373.903
+margin_right = 673.456
+margin_bottom = -173.903
+room_name = "outside"
+room_description = "outside in the village."
 
 [node name="Background" type="PanelContainer" parent="."]
 anchor_right = 1.0

@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/plex_mono_24.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/plex_mono_16.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Room.gd" type="Script" id=3]
+
+[node name="Room" type="PanelContainer"]
+margin_right = 250.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 250, 200 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 243.0
+margin_bottom = 193.0
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 236.0
+margin_bottom = 186.0
+
+[node name="RoomName" type="Label" parent="MarginContainer/Rows"]
+margin_right = 236.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+text = "Room Name"
+align = 1
+
+[node name="RoomDescription" type="Label" parent="MarginContainer/Rows"]
+margin_top = 36.0
+margin_right = 236.0
+margin_bottom = 83.0
+custom_fonts/font = ExtResource( 2 )
+text = "This is the description of the room."
+autowrap = true
