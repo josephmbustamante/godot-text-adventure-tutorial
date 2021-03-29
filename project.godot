@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "Exit",
+"language": "GDScript",
+"path": "res://Exit.gd"
+}, {
 "base": "PanelContainer",
 "class": "Room",
 "language": "GDScript",
 "path": "res://Room.gd"
 } ]
 _global_script_class_icons={
+"Exit": "",
 "Room": ""
 }
 
