@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://input/Input.gd" type="Script" id=1]
 [ext_resource path="res://fonts/plex_mono_28.tres" type="DynamicFont" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://CommandProcessor.gd" type="Script" id=4]
 [ext_resource path="res://rooms/Room.tscn" type="PackedScene" id=5]
 [ext_resource path="res://rooms/RoomManager.gd" type="Script" id=6]
+[ext_resource path="res://Player.gd" type="Script" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
@@ -27,6 +28,9 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Player" type="Node" parent="."]
+script = ExtResource( 7 )
 
 [node name="CommandProcessor" type="Node" parent="."]
 script = ExtResource( 4 )
