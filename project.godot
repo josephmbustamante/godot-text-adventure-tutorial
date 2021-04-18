@@ -12,15 +12,21 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "Exit",
 "language": "GDScript",
-"path": "res://Exit.gd"
+"path": "res://rooms/Exit.gd"
+}, {
+"base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://items/Item.gd"
 }, {
 "base": "PanelContainer",
 "class": "Room",
 "language": "GDScript",
-"path": "res://Room.gd"
+"path": "res://rooms/Room.gd"
 } ]
 _global_script_class_icons={
 "Exit": "",
+"Item": "",
 "Room": ""
 }
 
@@ -29,6 +35,10 @@ _global_script_class_icons={
 config/name="Text Adventure Tutorial"
 run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Types="*res://globals/Types.gd"
 
 [rendering]
 
