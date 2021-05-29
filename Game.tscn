@@ -54,6 +54,14 @@ margin_bottom = -173.903
 room_name = "outside the house"
 room_description = "outside of the random house, in the middle of the village."
 
+[node name="ShedRoom" parent="RoomManager" instance=ExtResource( 5 )]
+margin_left = 425.007
+margin_top = -639.825
+margin_right = 675.006
+margin_bottom = -439.825
+room_name = "a shed"
+room_description = "a dusty old shed used for storage."
+
 [node name="Background" type="PanelContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -123,5 +131,6 @@ custom_styles/normal = SubResource( 5 )
 custom_fonts/font = ExtResource( 2 )
 max_length = 48
 script = ExtResource( 1 )
-[connection signal="text_entered" from="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" to="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" method="_on_Input_text_entered"]
+
 [connection signal="text_entered" from="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" to="." method="_on_Input_text_entered"]
+[connection signal="text_entered" from="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" to="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" method="_on_Input_text_entered"]
