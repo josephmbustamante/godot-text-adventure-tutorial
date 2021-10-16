@@ -38,29 +38,82 @@ script = ExtResource( 4 )
 [node name="RoomManager" type="Node" parent="."]
 script = ExtResource( 6 )
 
-[node name="HouseRoom" parent="RoomManager" instance=ExtResource( 5 )]
-margin_left = 90.9979
-margin_top = -377.506
-margin_right = 340.998
-margin_bottom = -177.506
-room_name = "a house"
-room_description = "a random house that you've never seen before."
-
-[node name="OutsideRoom" parent="RoomManager" instance=ExtResource( 5 )]
-margin_left = 423.456
-margin_top = -373.903
-margin_right = 673.456
-margin_bottom = -173.903
-room_name = "outside the house"
-room_description = "outside of the random house, in the middle of the village."
-
-[node name="ShedRoom" parent="RoomManager" instance=ExtResource( 5 )]
-margin_left = 425.007
-margin_top = -639.825
-margin_right = 675.006
-margin_bottom = -439.825
+[node name="StartingShed" parent="RoomManager" instance=ExtResource( 5 )]
+anchor_top = 0.000771586
+anchor_bottom = 0.000771586
+margin_left = 1393.53
+margin_top = -401.655
+margin_right = 1643.53
+margin_bottom = -198.655
 room_name = "a shed"
-room_description = "a dusty old shed used for storage."
+room_description = "a storage shed behind a large building that appears to be an inn. There is a door to the inn and some storage crates to the west."
+
+[node name="BackOfInn" parent="RoomManager" instance=ExtResource( 5 )]
+margin_left = 1087.14
+margin_top = -419.617
+margin_right = 1367.14
+margin_bottom = -147.617
+room_name = "the back of the inn"
+room_description = "the back door of the inn, surrounded by crates and other storage that the innkeeper must be keeping outside. There is a door to the north that leads into the inn, and a path that goes to the village square."
+
+[node name="VillageSquare" parent="RoomManager" instance=ExtResource( 5 )]
+margin_left = 389.533
+margin_top = -1082.66
+margin_right = 655.533
+margin_bottom = -879.655
+room_name = "the village square"
+room_description = "the main square of the village. To the south is the shed and back of the inn. The main inn door is to the east, and there is a field to the west."
+
+[node name="InnDoor" parent="RoomManager" instance=ExtResource( 5 )]
+margin_left = 729.878
+margin_top = -1080.35
+margin_right = 995.878
+margin_bottom = -880.355
+room_name = "the inn door"
+room_description = "the main entrance to the inn. A sign outside says \"The Swooping Heron.\""
+
+[node name="InnInside" parent="RoomManager" instance=ExtResource( 5 )]
+anchor_left = -0.00045228
+anchor_right = -0.00045228
+anchor_bottom = 0.166667
+margin_left = 1083.62
+margin_top = -1108.06
+margin_right = 1407.62
+margin_bottom = -886.065
+room_name = "the inn"
+room_description = "the main area inside the inn. There are a few nondescript villagers drinking at tables around the room, but it isn't busy at the moment. The innkeeper is standing behind the bar, waiting to serve customers. There is a door to the kitchen to the south, and a door back to the village square to the west."
+
+[node name="InnKitchen" parent="RoomManager" instance=ExtResource( 5 )]
+margin_left = 1091.92
+margin_top = -751.646
+margin_right = 1357.92
+margin_bottom = -454.646
+room_name = "the inn's kitchen"
+room_description = "the kitchen of the inn. The cook isn't anywhere to be found - the room is empty, but a stew is cooking over the hearth. There is a door on the south wall that seems to go outside, and a door to the north back to the inn proper."
+
+[node name="Gate" parent="RoomManager" instance=ExtResource( 5 )]
+margin_left = 391.075
+margin_top = -1348.32
+margin_right = 657.075
+margin_bottom = -1145.32
+room_name = "the town gate"
+room_description = "the town gate. It leads out to the forest to the north.. A guard stands nearby watching everyone who comes by. The village is back toward the south."
+
+[node name="Field" parent="RoomManager" instance=ExtResource( 5 )]
+margin_left = 87.5334
+margin_top = -1080.66
+margin_right = 337.533
+margin_bottom = -877.655
+room_name = "a field"
+room_description = "a field of grass and flowers next to the village. The village is back to the east."
+
+[node name="Forest" parent="RoomManager" instance=ExtResource( 5 )]
+margin_left = 403.679
+margin_top = -1592.38
+margin_right = 669.679
+margin_bottom = -1389.38
+room_name = "the forest"
+room_description = "the forest outside of the town. Congratulations! You've made it out of the town."
 
 [node name="Background" type="PanelContainer" parent="."]
 anchor_right = 1.0

@@ -55,28 +55,40 @@ func get_exit_description() -> String:
 	return "Exits: " + PoolStringArray(exits.keys()).join(" ")
 
 
-func connect_exit_unlocked(direction: String, room):
-	_connect_exit(direction, room, false)
+func connect_exit_unlocked(direction: String, room, room_2_override_name = "null"):
+	return _connect_exit(direction, room, false, room_2_override_name)
 
 
-func connect_exit_locked(direction: String, room):
-	_connect_exit(direction, room, true)
+func connect_exit_locked(direction: String, room, room_2_override_name = "null"):
+	return _connect_exit(direction, room, true, room_2_override_name)
 
 
-func _connect_exit(direction: String, room, is_locked: bool = false):
+func _connect_exit(direction: String, room, is_locked: bool = false, room_2_override_name = "null"):
 	var exit = Exit.new()
 	exit.room_1 = self
 	exit.room_2 = room
-	exit.room_2_is_locked = is_locked
+	exit.is_locked = is_locked
 	exits[direction] = exit
-	match direction:
-		"west":
-			room.exits["east"] = exit
-		"east":
-			room.exits["west"] = exit
-		"north":
-			room.exits["south"] = exit
-		"south":
-			room.exits["north"] = exit
-		_:
-			printerr("Tried to connect invalid direction: %s", direction)
+
+	if room_2_override_name != "null":
+		room.exits[room_2_override_name] = exit
+	else:
+		match direction:
+			"west":
+				room.exits["east"] = exit
+			"east":
+				room.exits["west"] = exit
+			"north":
+				room.exits["south"] = exit
+			"south":
+				room.exits["north"] = exit
+			"path":
+				room.exits["path"] = exit
+			"inside":
+				room.exits["outside"] = exit
+			"outside":
+				room.exits["inside"] = exit
+			_:
+				printerr("Tried to connect invalid direction: ", direction)
+
+	return exit
