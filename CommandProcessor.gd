@@ -119,6 +119,6 @@ func help() -> String:
 	return "You can use these commands: go [location], take [item], drop [item], inventory, help"
 
 
-func change_room(new_room: Room) -> String:
+func change_room(new_room: GameRoom) -> String:
 	current_room = new_room
 	return new_room.get_full_description()

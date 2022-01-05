@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://fonts/plex_mono_16.tres" type="DynamicFont" id=1]
-[ext_resource path="res://rooms/Room.gd" type="Script" id=2]
+[ext_resource path="res://rooms/GameRoom.gd" type="Script" id=2]
 [ext_resource path="res://fonts/plex_mono_24.tres" type="DynamicFont" id=3]
 
-[node name="Room" type="PanelContainer"]
+[node name="GameRoom" type="PanelContainer"]
 margin_right = 250.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 250, 200 )

@@ -1,6 +1,6 @@
 tool
 extends PanelContainer
-class_name Room
+class_name GameRoom
 
 
 export (String) var room_name = "Room Name" setget set_room_name

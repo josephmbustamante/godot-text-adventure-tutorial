@@ -4,7 +4,7 @@
 [ext_resource path="res://fonts/plex_mono_28.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Game.gd" type="Script" id=3]
 [ext_resource path="res://CommandProcessor.gd" type="Script" id=4]
-[ext_resource path="res://rooms/Room.tscn" type="PackedScene" id=5]
+[ext_resource path="res://rooms/GameRoom.tscn" type="PackedScene" id=5]
 [ext_resource path="res://rooms/RoomManager.gd" type="Script" id=6]
 [ext_resource path="res://Player.gd" type="Script" id=7]
 
@@ -76,18 +76,18 @@ room_description = "the main entrance to the inn. A sign outside says \"The Swoo
 anchor_left = -0.00045228
 anchor_right = -0.00045228
 anchor_bottom = 0.166667
-margin_left = 1083.62
-margin_top = -1108.06
-margin_right = 1407.62
-margin_bottom = -886.065
+margin_left = 1083.46
+margin_top = -1108.0
+margin_right = 1407.46
+margin_bottom = -886.0
 room_name = "the inn"
 room_description = "the main area inside the inn. There are a few nondescript villagers drinking at tables around the room, but it isn't busy at the moment. The innkeeper is standing behind the bar, waiting to serve customers. There is a door to the kitchen to the south, and a door back to the village square to the west."
 
 [node name="InnKitchen" parent="RoomManager" instance=ExtResource( 5 )]
-margin_left = 1091.92
-margin_top = -751.646
-margin_right = 1357.92
-margin_bottom = -454.646
+margin_left = 1092.0
+margin_top = -702.0
+margin_right = 1414.0
+margin_bottom = -455.0
 room_name = "the inn's kitchen"
 room_description = "the kitchen of the inn. The cook isn't anywhere to be found - the room is empty, but a stew is cooking over the hearth. There is a door on the south wall that seems to go outside, and a door to the north back to the inn proper."
 
@@ -179,9 +179,9 @@ margin_left = 55.0
 margin_right = 984.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-custom_fonts/font = ExtResource( 2 )
 max_length = 48
 script = ExtResource( 1 )
 
