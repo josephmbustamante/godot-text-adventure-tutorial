@@ -7,12 +7,10 @@
 [ext_resource path="res://rooms/GameRoom.tscn" type="PackedScene" id=5]
 [ext_resource path="res://rooms/RoomManager.gd" type="Script" id=6]
 [ext_resource path="res://Player.gd" type="Script" id=7]
+[ext_resource path="res://GameInfo.tscn" type="PackedScene" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.215686, 0.215686, 0.215686, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.286275, 0.286275, 0.286275, 1 )
@@ -138,23 +136,7 @@ margin_right = 1004.0
 margin_bottom = 580.0
 custom_constants/separation = 20
 
-[node name="GameInfo" type="PanelContainer" parent="Background/MarginContainer/Rows"]
-margin_right = 984.0
-margin_bottom = 480.0
-size_flags_vertical = 3
-custom_styles/panel = SubResource( 2 )
-
-[node name="Scroll" type="ScrollContainer" parent="Background/MarginContainer/Rows/GameInfo"]
-margin_right = 984.0
-margin_bottom = 480.0
-scroll_horizontal_enabled = false
-
-[node name="HistoryRows" type="VBoxContainer" parent="Background/MarginContainer/Rows/GameInfo/Scroll"]
-margin_right = 984.0
-margin_bottom = 480.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 20
+[node name="GameInfo" parent="Background/MarginContainer/Rows" instance=ExtResource( 8 )]
 
 [node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Rows"]
 margin_top = 500.0

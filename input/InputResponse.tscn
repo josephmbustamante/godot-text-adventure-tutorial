@@ -4,15 +4,26 @@
 [ext_resource path="res://input/InputResponse.gd" type="Script" id=2]
 [ext_resource path="res://input/InputHistory.tscn" type="PackedScene" id=3]
 
-[node name="InputResponse" type="VBoxContainer"]
-margin_right = 984.0
-margin_bottom = 73.0
-custom_constants/separation = 0
+[node name="InputResponse" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_left = 5
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InputHistory" parent="." instance=ExtResource( 3 )]
+[node name="Rows" type="VBoxContainer" parent="."]
+margin_left = 5.0
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Response" parent="." instance=ExtResource( 1 )]
+[node name="InputHistory" parent="Rows" instance=ExtResource( 3 )]
+margin_right = 1019.0
+
+[node name="Response" parent="Rows" instance=ExtResource( 1 )]
+margin_right = 1019.0
