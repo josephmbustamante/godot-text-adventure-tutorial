@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://input/Input.gd" type="Script" id=1]
 [ext_resource path="res://fonts/plex_mono_28.tres" type="DynamicFont" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://rooms/RoomManager.gd" type="Script" id=6]
 [ext_resource path="res://Player.gd" type="Script" id=7]
 [ext_resource path="res://GameInfo.tscn" type="PackedScene" id=8]
+[ext_resource path="res://SidePanel.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
@@ -129,36 +130,43 @@ custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
 
-[node name="Rows" type="VBoxContainer" parent="Background/MarginContainer"]
+[node name="Columns" type="HBoxContainer" parent="Background/MarginContainer"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 1004.0
 margin_bottom = 580.0
 custom_constants/separation = 20
 
-[node name="GameInfo" parent="Background/MarginContainer/Rows" instance=ExtResource( 8 )]
+[node name="Rows" type="VBoxContainer" parent="Background/MarginContainer/Columns"]
+margin_right = 644.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
 
-[node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Rows"]
+[node name="GameInfo" parent="Background/MarginContainer/Columns/Rows" instance=ExtResource( 8 )]
+margin_right = 644.0
+
+[node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Columns/Rows"]
 margin_top = 500.0
-margin_right = 984.0
+margin_right = 644.0
 margin_bottom = 560.0
 rect_min_size = Vector2( 0, 60 )
 custom_styles/panel = SubResource( 3 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/Rows/InputArea"]
-margin_right = 984.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/Columns/Rows/InputArea"]
+margin_right = 644.0
 margin_bottom = 60.0
 
-[node name="Caret" type="Label" parent="Background/MarginContainer/Rows/InputArea/HBoxContainer"]
+[node name="Caret" type="Label" parent="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer"]
 margin_top = 11.0
 margin_right = 51.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 2 )
 text = " > "
 
-[node name="Input" type="LineEdit" parent="Background/MarginContainer/Rows/InputArea/HBoxContainer"]
+[node name="Input" type="LineEdit" parent="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer"]
 margin_left = 55.0
-margin_right = 984.0
+margin_right = 644.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
@@ -167,5 +175,8 @@ custom_styles/normal = SubResource( 5 )
 max_length = 48
 script = ExtResource( 1 )
 
-[connection signal="text_entered" from="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" to="." method="_on_Input_text_entered"]
-[connection signal="text_entered" from="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" to="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" method="_on_Input_text_entered"]
+[node name="SidePanel" parent="Background/MarginContainer/Columns" instance=ExtResource( 9 )]
+margin_left = 664.0
+
+[connection signal="text_entered" from="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer/Input" to="." method="_on_Input_text_entered"]
+[connection signal="text_entered" from="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer/Input" to="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer/Input" method="_on_Input_text_entered"]

@@ -1,15 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://GameInfo.gd" type="Script" id=1]
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.215686, 0.215686, 0.215686, 1 )
+[ext_resource path="res://main_panel.tres" type="StyleBox" id=2]
 
 [node name="GameInfo" type="PanelContainer"]
 margin_right = 984.0
 margin_bottom = 480.0
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
